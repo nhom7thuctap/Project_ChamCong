@@ -1,23 +1,28 @@
 {
-  "parser": "babel-eslint",
-  "extends": [
-    "airbnb",
-    "prettier",
-    "plugin:eslint-comments/recommended",
-    "prettier/react",
-    "plugin:jsx-a11y/recommended"
-  ],
-  "plugins": ["eslint-comments", "unicorn", "react-hooks", "jsx-a11y"],
+  "root": true,
+  "extends": ["airbnb", "airbnb-typescript"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "prettier", "react-hooks"],
   "env": {
-    "browser": true,
-    "node": true,
-    "es6": true
+    "browser": false,
+    "node": true
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
   },
   "rules": {
     "react/jsx-filename-extension": [
       2,
       {
-        "extensions": [".js", ".jsx"]
+        "extensions": [".js", ".ts", ".tsx"]
       }
     ],
     "import/extensions": 0,
@@ -25,9 +30,16 @@
     "max-len": 0,
     "react-hooks/exhaustive-deps": 0,
     "import/no-extraneous-dependencies": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
     "linebreak-style": 0,
+    "@typescript-eslint/no-use-before-define": [
+      1,
+      {
+        "functions": false
+      }
+    ],
     "no-use-before-define": [
-      2,
+      1,
       {
         "functions": false
       }
@@ -51,38 +63,54 @@
     "import/no-cycle": 0,
     "react-hooks/rules-of-hooks": 2,
     "react/self-closing-comp": 0,
-    "react/jsx-props-no-spreading": 1,
+    "react/jsx-props-no-spreading": 0,
     "arrow-body-style": [2, "as-needed"],
     "object-curly-newline": 0,
     "implicit-arrow-linebreak": 0,
     "operator-linebreak": 0,
-    "quotes": [
+    "quotes": 0,
+    "@typescript-eslint/quotes": [
       2,
       "double",
       {
         "avoidEscape": true
       }
     ],
+    "@typescript-eslint/no-shadow": 0,
     "nonblock-statement-body-position": 0,
     "curly": 0,
-    "no-unused-vars": [
+    "no-unused-vars": 0,
+    "@typescript-eslint/no-unused-vars": [
       1,
       {
         "ignoreRestSiblings": true
       }
     ],
+    "react/jsx-no-duplicate-props": 0,
     "no-trailing-spaces": 1,
     "global-require": 0,
     "import/no-dynamic-require": 0,
     "no-underscore-dangle": 0,
     "no-shadow": 0,
-    "no-alert": 1,
+    "no-alert": 2,
     "eslint-comments/no-unlimited-disable": 0,
-    "comma-dangle": 0,
     "arrow-parens": 0,
     "no-undef": 0,
     "no-confusing-arrow": 0,
-    "newline-before-return": 0,
-    "jsx-a11y/label-has-associated-control": 0
-  }
+    "jsx-a11y/label-has-associated-control": 0,
+    "react/no-array-index-key": 0,
+    "@typescript-eslint/indent": 0,
+    "indent": 0,
+    "import/order": 0,
+    "prettier/prettier": 0,
+    "newline-before-return": 0
+  },
+  "overrides": [
+    {
+      "files": ["src/utils/others/pick/index.ts"],
+      "rules": {
+        "no-param-reassign": 0
+      }
+    }
+  ]
 }

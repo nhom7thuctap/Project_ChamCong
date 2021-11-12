@@ -1,5 +1,5 @@
 {
-  "plugins": ["stylelint-prettier", "stylelint-order"],
+  "plugins": ["stylelint-order"],
   "extends": ["stylelint-config-standard", "stylelint-config-rational-order"],
   "rules": {
     "order/properties-order": [],
@@ -19,9 +19,17 @@
       }
     ],
     "color-hex-length": "long",
-    "color-hex-case": "upper",
+    "color-hex-case": "lower",
     "no-descending-specificity": null,
     "value-list-comma-newline-after": null,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ],
+    "font-family-no-missing-generic-family-keyword": null,
+    "no-duplicate-selectors": null,
     "declaration-colon-newline-after": null
   }
 }
