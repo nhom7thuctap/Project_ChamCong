@@ -31,6 +31,13 @@ export default function Home() {
       </Button>
       <Button
         onClick={() => {
+          router.push(ROUTES.SIGN_UP);
+        }}
+      >
+        Go to Sign up page
+      </Button>
+      <Button
+        onClick={() => {
           notify.success("Success");
         }}
       >
@@ -43,6 +50,7 @@ export default function Home() {
       >
         Alert message Error
       </Button>
+
       <Button
         onClick={() => {
           dispatch(
