@@ -1,4 +1,5 @@
 // libs
+import "./styles.scss";
 import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 // hooks
@@ -9,6 +10,8 @@ import { updateMagicNumber } from "@/redux/actions/example";
 // others
 import { notify } from "@/utils/notify";
 import { ROUTES } from "@/constants/routers";
+import { NavLink } from "react-router-dom";
+import Header from "@/components/Header";
 
 // TODO: talk
 
@@ -19,49 +22,40 @@ export default function Home() {
   const router = useRouter();
   const dispatch = useDispatch();
   const { magicNumber } = useStore("Home", "exampleReducer");
-
+  const handleClick = () => {
+    router.push(ROUTES.SIGN_IN);
+  };
   return (
-    <h1>
-      <Button
-        onClick={() => {
-          router.push(ROUTES.SIGN_IN);
-        }}
-      >
-        Go to Sign in page
-      </Button>
-      <Button
-        onClick={() => {
-          router.push(ROUTES.SIGN_UP);
-        }}
-      >
-        Go to Sign up page
-      </Button>
-      <Button
-        onClick={() => {
-          notify.success("Success");
-        }}
-      >
-        Alert message success
-      </Button>
-      <Button
-        onClick={() => {
-          notify.error("Error");
-        }}
-      >
-        Alert message Error
-      </Button>
-
-      <Button
-        onClick={() => {
-          dispatch(
-            updateMagicNumber({
-              magicNumber: magicNumber * 3,
-            }),
-          );
-        }}
-      >
-        Update Magic Number (current-value: {magicNumber})
-      </Button>
-    </h1>
+    <>
+      <Header />
+      <div className="main">
+        <div className="banner">
+          <div className="text-banner">
+            <h1 className="title">
+              phần mềm quản lý <br />
+              nhân sự
+            </h1>
+            <h3 className="desc">Hệ thống cloud uy tín, tốc độ và mạnh mẽ.</h3>
+            <div className="buttons">
+              <div className="button">
+                <Button variant="contained">Read more</Button>
+              </div>
+              <div className="button">
+                <Button onClick={handleClick} variant="outlined">
+                  Getting started
+                </Button>
+              </div>
+            </div>
+          </div>
+          <div className="img-banner">
+            <img
+              className="image"
+              src="https://media.istockphoto.com/vectors/vector-illustration-of-check-list-work-environment-cartoon-with-of-vector-id1216945255"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

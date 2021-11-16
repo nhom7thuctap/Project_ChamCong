@@ -1,0 +1,35 @@
+.main {
+  margin: 0 auto;
+  width: 90%;
+  /* height: calc(100vh - 90px); */
+  .banner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .text-banner {
+      .title {
+        text-transform: uppercase;
+        font-size: 40px;
+        letter-spacing: 2px;
+      }
+      .desc {
+        margin-top: 10px;
+        font-weight: 500;
+      }
+      .buttons {
+        display: flex;
+        margin-top: 40px;
+        .button:not(:first-child) {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    .img-banner {
+      .image {
+        width: 800px;
+      }
+    }
+  }
+}

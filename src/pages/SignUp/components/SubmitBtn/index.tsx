@@ -1,25 +1,5 @@
-// libs
-import { Button } from "@mui/material";
-// hooks
-import { useTypedForm } from "@/hooks/useTypedForm";
+import React from "react";
 
-/**
- * SubmitBtn
- */
-export default function SubmitBtn() {
-  const { getValues } = useTypedForm("SignIn");
-
-  return (
-    <Button
-      variant="contained"
-      onClick={() => {
-        const { username, password } = getValues();
-        // TODO:
-        // eslint-disable-next-line no-alert
-        alert({ username, password });
-      }}
-    >
-      Sign In
-    </Button>
-  );
+export default function index() {
+  return <div></div>;
 }
