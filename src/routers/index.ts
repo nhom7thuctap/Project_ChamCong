@@ -1,5 +1,6 @@
 // routes
 import { ROUTES } from "@/constants/routers";
+import ForgotPassword from "@/pages/ForgotPassword";
 // pages
 import Home from "@/pages/Home";
 import Signin from "@/pages/SignIn";
@@ -23,6 +24,11 @@ const appRoutes = [
     path: ROUTES.SIGN_UP,
     exact: true,
     component: Signup,
+  },
+  {
+    path: ROUTES.FORGOT_PASSWORD,
+    exact: true,
+    component: ForgotPassword,
   },
 ];
 

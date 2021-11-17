@@ -1,51 +1,3 @@
-// // libs
-// import { Checkbox, TextField } from "@mui/material";
-// // hooks
-// import { useTypedForm } from "@/hooks/useTypedForm";
-// // components
-// import SubmitBtn from "../../components/SubmitBtn";
-// // others
-// import classes from "./SignInForm.module.scss";
-
-// /**
-//  * SignInForm
-//  */
-// export default function SignInForm() {
-//   const { register } = useTypedForm("SignIn");
-
-//   return (
-//     <div className={classes.wrapper}>
-//       <div className={classes.title}>Sign in</div>
-//       <form>
-//         <div className={classes.formItem}>
-//           <TextField
-//             {...register("username")}
-//             autoComplete="username"
-//             id="username"
-//             label="Username or Email"
-//           />
-//         </div>
-//         <div className={classes.formItem}>
-//           <TextField
-//             {...register("password")}
-//             label="Password"
-//             type="password"
-//             id="password"
-//             autoComplete="password"
-//           />
-//         </div>
-//         <div className="remember-me">
-//           <Checkbox />
-//           <span>Remember me</span>
-//         </div>
-//         <SubmitBtn />
-//         <div style={{ marginTop: "10px" }} className="forgot-password">
-//           <a href="#">Quên mật khẩu</a>
-//         </div>
-//       </form>
-//     </div>
-//   );
-// }
 import * as React from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -81,7 +33,7 @@ function Copyright(props: any) {
 
 const theme = createTheme();
 
-export default function SignIn() {
+export default function ForgotPasswordForm() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -150,7 +102,7 @@ export default function SignIn() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href={ROUTES.FORGOT_PASSWORD} variant="body2">
+                <Link href="#" variant="body2">
                   Forgot password?
                 </Link>
               </Grid>
