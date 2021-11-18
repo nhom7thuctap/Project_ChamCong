@@ -1,10 +1,10 @@
 import * as yup from "yup";
 
-export const schemaForgotPassword = yup
+export const schemaChangePassword = yup
   .object({
-    username: yup
+    password: yup
       .string()
-      .email("Email is invalid")
+      .min(6, "Password must be at least 6 charaters")
       .required("This field is required"),
   })
   .required();

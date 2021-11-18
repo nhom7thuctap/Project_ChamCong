@@ -1,10 +1,10 @@
 import classes from "../SignIn/Signin.module.scss";
-import ForgotPasswordForm from "./main";
+import ChangePasswordForm from "./main";
 
-export default function ForgotPassword() {
+export default function ChangePassword() {
   return (
     <div className={classes.wrapper}>
-      <ForgotPasswordForm />
+      <ChangePasswordForm />
     </div>
   );
 }

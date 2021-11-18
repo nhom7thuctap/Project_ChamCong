@@ -1,0 +1,64 @@
+.form-wrapper {
+  width: 400px;
+  margin: 0 auto;
+  .signin-button {
+    margin-top: 10px;
+    width: 100%;
+    outline: none;
+    padding: 15px;
+    border: none;
+    background: #0d6af4;
+    color: #fff;
+    border-radius: 5px;
+    text-transform: uppercase;
+    &:hover {
+      background: #0056d8;
+    }
+  }
+  .title {
+    .avatar {
+      margin: 0 auto;
+    }
+    text-align: center;
+    h3 {
+      margin: 10px 0 20px;
+      text-transform: capitalize;
+    }
+  }
+  .link-to-signin {
+    display: block;
+    margin-top: 16px;
+    font-size: 14px;
+    text-align: right;
+  }
+  .fullname {
+    display: flex;
+    .last-name {
+      margin-left: 10px;
+    }
+  }
+  .line {
+    margin: 20px auto 10px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 14px;
+    &::after,
+    &::before {
+      background-color: rgb(189, 189, 189);
+      content: "";
+      display: inline-block;
+      height: 1px;
+      position: relative;
+      vertical-align: middle;
+      width: 50%;
+    }
+    &::before {
+      right: 0.5em;
+      margin-left: -50%;
+    }
+    &::after {
+      left: 0.5em;
+      margin-right: -50%;
+    }
+  }
+}

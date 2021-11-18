@@ -1,14 +1,10 @@
-import ReactHookForm from "@/providers/ReactHookForm";
-import { schemaSignin } from "@/react-hook-form/validations/Signin";
 import SignUpForm from "./mains/SignUpForm";
-import classes from "./Signup.module.scss";
+import classes from "../SignIn/Signin.module.scss";
 
 export default function Signup() {
   return (
-    <div className={classes.wrapper}>
-      <ReactHookForm validateSchema={schemaSignin}>
-        <SignUpForm />
-      </ReactHookForm>
+    <div style={{ margin: "20px auto" }}>
+      <SignUpForm />
     </div>
   );
 }

@@ -1,15 +1,15 @@
 import Copyright from "@/components/Copyringht";
 import { ROUTES } from "@/constants/routers";
 import InputField from "@/custom-fields/InputField";
-import { schemaForgotPassword } from "@/react-hook-form/validations/ForgotPassword";
+import { schemaChangePassword } from "@/react-hook-form/validations/ChangePassword";
 import { Avatar, Grid } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
 import { FastField, Form, Formik } from "formik";
 import { Link } from "react-router-dom";
 
-export default function ForgotPasswordForm() {
+export default function ChangePasswordForm() {
   const initialValues = {
-    username: "",
+    password: "",
   };
   const handleSubmit = () => {
     console.log("handle Submit");
@@ -19,7 +19,7 @@ export default function ForgotPasswordForm() {
     <div className="form-wrapper">
       <Formik
         initialValues={initialValues}
-        validationSchema={schemaForgotPassword}
+        validationSchema={schemaChangePassword}
         onSubmit={handleSubmit}
       >
         {(formikProps) => {
@@ -29,30 +29,27 @@ export default function ForgotPasswordForm() {
             <Form>
               <div className="title">
                 <Avatar sx={{ bgcolor: deepPurple[500] }} className="avatar" />
-                <h3>Forgot password</h3>
-                <p>
-                  Enter your email. We will send a new password to your email
-                </p>
+                <h3>Change your password</h3>
               </div>
               <FastField
-                name="username"
+                name="password"
                 component={InputField}
-                label="Email Address"
-                placeholder="Enter your email"
-                type="email"
+                label="Password"
+                placeholder="Enter your new password"
+                type="password"
               />
               <button className="signin-button" type="submit">
-                next
+                confirm
               </button>
               <Grid container sx={{ mt: 2 }}>
                 <Grid item xs>
-                  <Link className="link" to={ROUTES.SIGN_IN}>
-                    Back
+                  <Link className="link" to={ROUTES.HOME}>
+                    Home
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link className="link" to={ROUTES.SIGN_UP}>
-                    Do not have an account? Sign Up
+                  <Link className="link" to="/help">
+                    Need Help
                   </Link>
                 </Grid>
               </Grid>

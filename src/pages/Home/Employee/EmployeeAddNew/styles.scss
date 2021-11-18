@@ -1,0 +1,44 @@
+.form-add {
+  margin: 0 auto;
+  width: 800px !important;
+  // display: flex;
+  .group {
+    margin: 40px 20px;
+    .group-title {
+      overflow: hidden;
+      text-align: center;
+      &::after,
+      &::before {
+        background-color: rgb(189, 189, 189);
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        width: 50%;
+      }
+      &::before {
+        right: 0.5em;
+        margin-left: -50%;
+      }
+      &::after {
+        left: 0.5em;
+        margin-right: -50%;
+      }
+    }
+    .form-group {
+      display: flex;
+      .field {
+        width: 100%;
+      }
+      .field:not(:first-child) {
+        margin-left: 20px;
+      }
+    }
+  }
+  .btn-add {
+    display: block;
+    width: 200px !important;
+    margin: 0 auto;
+  }
+}

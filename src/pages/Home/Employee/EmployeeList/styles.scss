@@ -1,0 +1,28 @@
+.employee-wrapper {
+  width: 100%;
+  padding: 20px;
+  .title {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .MuiDataGrid-row {
+    &:hover {
+      .btn-group {
+        visibility: visible;
+      }
+    }
+    .btn-group {
+      visibility: hidden;
+    }
+  }
+  .button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    .btn-active {
+      background-color: rgb(46, 94, 253);
+    }
+  }
+  .table {
+    height: 600px;
+  }
+}

@@ -9,6 +9,8 @@ import appRoutes from "@/routers";
 import { store } from "@/redux/store";
 import "@/styles/index.css";
 import { ROUTES } from "./constants/routers";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.scss";
 
 /**
  * App
